@@ -7,54 +7,62 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      background-color: #0f0f0f;
-      color: #ffffff;
       font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      text-align: center;
       padding: 20px;
-      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .logo {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       background-image: url('logo.png'); /* Replace with actual logo path */
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
       opacity: 0;
       animation: fadeIn 1s ease-in-out forwards;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 10px;
-      color: #f8f8f8;
       opacity: 0;
       animation: fadeIn 1s ease-in-out 0.5s forwards;
     }
 
-    p {
+    .typing {
       font-size: 1rem;
       color: #bbbbbb;
-      margin-bottom: 30px;
-      height: 20px;
       overflow: hidden;
       white-space: nowrap;
       border-right: 2px solid #fff;
-      width: 0;
       margin: 20px auto;
+      width: 0;
       opacity: 0;
       animation: typing 3s steps(40, end) 1s forwards, blink 0.8s step-end infinite alternate;
     }
@@ -69,9 +77,11 @@
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin-top: 30px;
       opacity: 0;
       animation: fadeIn 1s ease-in-out 4s forwards;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
@@ -101,11 +111,15 @@
     }
 
     @media (max-width: 500px) {
-      h1 {
-        font-size: 1.6rem;
+      .card {
+        padding: 30px 20px;
       }
 
-      p {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .typing {
         font-size: 0.9rem;
         width: 200px;
       }
@@ -114,18 +128,12 @@
 </head>
 <body>
 
-  <div class="logo"></div>
-
-  <h1>Jalwa Games Prediction</h1>
-  <p id="typingText">Trusted & Smart Predictions for Winning Big</p>
-
-  <a class="btn" href="https://t.me/yourchannel" target="_blank">Join on Telegram</a>
-
-  <script>
-    // You can add future JS enhancements here
-    // For now, animation is handled via CSS
-    // JS is reserved if you want page views, transitions, etc.
-  </script>
+  <div class="card">
+    <div class="logo"></div>
+    <h1>Jalwa Games Prediction</h1>
+    <p class="typing">Trusted & Smart Predictions for Winning Big</p>
+    <a class="btn" href="https://t.me/yourchannel" target="_blank">Join on Telegram</a>
+  </div>
 
 </body>
 </html>
