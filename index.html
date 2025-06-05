@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jalwa Games Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      background-image: url('logo.png'); /* Replace with actual logo path */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #f8f8f8;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 0.5s forwards;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #bbbbbb;
+      margin-bottom: 30px;
+      height: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #fff;
+      width: 0;
+      margin: 20px auto;
+      opacity: 0;
+      animation: typing 3s steps(40, end) 1s forwards, blink 0.8s step-end infinite alternate;
+    }
+
+    .btn {
+      background-color: #e50914;
+      color: #ffffff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 4s forwards;
+    }
+
+    .btn:hover {
+      background-color: #ff1e2c;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 260px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo"></div>
+
+  <h1>Jalwa Games Prediction</h1>
+  <p id="typingText">Trusted & Smart Predictions for Winning Big</p>
+
+  <a class="btn" href="https://t.me/yourchannel" target="_blank">Join on Telegram</a>
+
+  <script>
+    // You can add future JS enhancements here
+    // For now, animation is handled via CSS
+    // JS is reserved if you want page views, transitions, etc.
+  </script>
+
+</body>
+</html>
