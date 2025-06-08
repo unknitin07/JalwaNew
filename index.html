@@ -11,7 +11,7 @@
     }
     body {
       margin: 0;
-      padding: 10px;
+      padding: 15px;
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       color: white;
@@ -26,7 +26,7 @@
     }
     .main-wrapper {
       width: 100%;
-      max-width: 100%;
+      max-width: 500px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,143 +34,163 @@
     }
     .testimonial-container {
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       position: relative;
-      height: 80px;
+      height: 120px;
       overflow: hidden;
     }
     .testimonial-slider {
       position: absolute;
-      white-space: nowrap;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       will-change: transform;
-      animation: slideTestimonial 25s linear infinite;
+      animation: slideTestimonial 20s linear infinite;
     }
     .testimonial-slider:nth-child(2) {
-      animation-delay: 12.5s;
+      animation-delay: 10s;
     }
     @keyframes slideTestimonial {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      0% { transform: translateY(100%); opacity: 0; }
+      5% { transform: translateY(0); opacity: 1; }
+      45% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(-100%); opacity: 0; }
     }
     .testimonial-item {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 0 10px;
+      width: 95%;
+      padding: 20px;
+      margin: 0 auto;
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      font-size: 13px;
+      border-radius: 15px;
+      font-size: 16px;
       color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .center-card {
       width: 100%;
       background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
     .logo {
-      font-size: 22px;
+      font-size: 28px;
       font-weight: bold;
       color: #fff;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
     .tagline {
-      font-size: 13px;
+      font-size: 16px;
       color: #ccc;
       line-height: 1.4;
     }
     .cta-button {
-      margin: 15px auto 10px;
-      padding: 12px 20px;
-      font-size: 15px;
+      margin: 20px auto 15px;
+      padding: 15px 25px;
+      font-size: 18px;
       background: #f00;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 0 10px #f00;
+      box-shadow: 0 0 15px #f00;
       transition: background 0.3s;
-      width: 90%;
-      max-width: 280px;
+      width: 100%;
+      max-width: 300px;
       display: block;
+      font-weight: bold;
     }
     .cta-button:active {
       background: #cc0000;
       transform: scale(0.98);
     }
     .timer {
-      font-size: 13px;
+      font-size: 16px;
       color: red;
-      margin-top: 10px;
+      margin-top: 15px;
+      font-weight: bold;
     }
     .trust-card, .features, .live-counter {
-      margin-top: 15px;
+      margin-top: 20px;
       width: 100%;
     }
     .trust-card {
       background: rgba(255, 255, 255, 0.05);
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #444;
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
     .trust-card div {
-      margin: 5px 0;
+      margin: 8px 0;
       color: #ffe58f;
-      font-size: 13px;
+      font-size: 16px;
     }
     .features h2 {
-      font-size: 15px;
-      margin-bottom: 8px;
+      font-size: 18px;
+      margin-bottom: 12px;
     }
     .features ul {
       list-style: none;
       padding: 0;
-      font-size: 13px;
+      font-size: 16px;
     }
     .features li {
-      margin: 6px 0;
+      margin: 8px 0;
       color: #ccc;
-      line-height: 1.4;
+      line-height: 1.5;
     }
     .exit-popup {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       color: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      border: 1px solid #f00;
-      box-shadow: 0 0 15px #f00;
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid #f00;
+      box-shadow: 0 0 20px #f00;
       display: none;
       z-index: 1000;
       width: 90%;
-      max-width: 300px;
-      font-size: 13px;
+      max-width: 350px;
+      font-size: 16px;
       text-align: center;
     }
     .exit-popup h3 {
       margin-top: 0;
-      font-size: 16px;
+      font-size: 20px;
+      color: #ffe58f;
     }
     .exit-popup button {
-      margin-top: 12px;
-      padding: 10px 15px;
+      margin-top: 15px;
+      padding: 12px 20px;
       background: #f00;
       color: #fff;
       border: none;
-      border-radius: 6px;
-      font-size: 14px;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
       width: 100%;
+      font-weight: bold;
     }
     .live-counter {
-      font-size: 13px;
+      font-size: 16px;
       color: #0f0;
-      text-shadow: 0 0 6px #0f0;
+      text-shadow: 0 0 8px #0f0;
       text-align: center;
       margin-bottom: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -178,18 +198,19 @@
   <div class="main-wrapper">
     <div class="testimonial-container">
       <div class="testimonial-slider">
-        <span class="testimonial-item">"Bhai 4,500 ka win kara kal! 💥" – Rahul</span>
-        <span class="testimonial-item">"Free tip me bhi paisa ban gaya 😎" – Tushar</span>
-        <span class="testimonial-item">"VIP leke toh life set hai bhai! 🔥" – Mohit</span>
-        <span class="testimonial-item">"Pehle din se hi profit! 🤩" – Vikas</span>
-        <span class="testimonial-item">"1 hafte me 15K ka profit! 🚀" – Ankit</span>
+        <div class="testimonial-item">"Bhai ne 4,500 ka win karaya kal! 💥 Best tips ever!" – Rahul, Mumbai</div>
       </div>
       <div class="testimonial-slider">
-        <span class="testimonial-item">"Har din ka 1-2K pakka! 💰" – Sanjay</span>
-        <span class="testimonial-item">"Loss hua toh paisa wapis mila! 👍" – Ramesh</span>
-        <span class="testimonial-item">"Best tips channel hai yeh! 👑" – Suresh</span>
-        <span class="testimonial-item">"1 mahine se consistent profit! 📈" – Deepak</span>
-        <span class="testimonial-item">"Bhai ne game badal diya! 🏆" – Manish</span>
+        <div class="testimonial-item">"Free tip me bhi 1,200 ka profit! 😎 Ab to VIP join karunga" – Tushar, Delhi</div>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-item">"VIP leke toh life set hai bhai! 🔥 25K profit this month" – Mohit, Bangalore</div>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-item">"Pehle din se hi profit! 🤩 3 din me 7,800 ka return" – Vikas, Pune</div>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-item">"1 hafte me 15K ka profit! 🚀 Paisa double scheme se better" – Ankit, Hyderabad</div>
       </div>
     </div>
 
@@ -219,15 +240,14 @@
 
     <div class="exit-popup" id="exitPopup">
       <h3>🎁 Sirf Aapke Liye ₹500 Bonus!</h3>
-      <p>Wapas aaiye aur claim kariye apna reward Telegram pe!</p>
+      <p>Abhi join karein aur pao exclusive offer! Limited time only!</p>
       <button onclick="window.location.href='https://t.me/yourchannel'">Claim Now</button>
     </div>
 
-    <div class="live-counter" id="liveUsers">🔴 142 log abhi online hai</div>
+    <div class="live-counter" id="liveUsers">🔴 158 log abhi online hai</div>
   </div>
 
   <script>
-    // Optimized for mobile performance
     document.addEventListener('DOMContentLoaded', function() {
       // Countdown timer
       function startCountdown(duration) {
@@ -250,7 +270,6 @@
           }
         }, 1000);
         
-        // Cleanup interval when page is hidden
         document.addEventListener('visibilitychange', function() {
           if (document.hidden) {
             clearInterval(interval);
@@ -269,7 +288,6 @@
         }
       });
       
-      // For touch devices
       document.addEventListener('touchstart', function(e) {
         mouseY = e.touches[0].clientY;
       });
@@ -283,17 +301,24 @@
       function showExitPopup() {
         document.getElementById('exitPopup').style.display = 'block';
         exitPopupShown = true;
+        
+        // Close popup after 15 seconds if not interacted with
+        setTimeout(function() {
+          if (document.getElementById('exitPopup').style.display === 'block') {
+            document.getElementById('exitPopup').style.display = 'none';
+          }
+        }, 15000);
       }
 
       // Fake live user count
-      let liveUsers = 142;
+      let liveUsers = 158;
       const userElement = document.getElementById('liveUsers');
       
       setInterval(() => {
-        let change = Math.floor(Math.random() * 5) * (Math.random() > 0.5 ? 1 : -1);
-        liveUsers = Math.max(120, liveUsers + change);
+        let change = Math.floor(Math.random() * 6) * (Math.random() > 0.5 ? 1 : -1);
+        liveUsers = Math.max(140, liveUsers + change);
         userElement.innerText = `🔴 ${liveUsers} log abhi online hai`;
-      }, 4000);
+      }, 5000);
       
       // Pause animations when tab is not active
       document.addEventListener('visibilitychange', function() {
