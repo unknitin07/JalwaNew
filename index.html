@@ -13,32 +13,54 @@
       text-align: center;
       overflow-x: hidden;
       padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-slider {
+      width: 95%;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 13px;
+      color: #fff;
+      white-space: nowrap;
+      animation: slideTestimonial 12s linear infinite;
+    }
+    @keyframes slideTestimonial {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
     .center-card {
-      width: 100%;
+      width: 95%;
       max-width: 95%;
-      margin: 60px auto 20px;
       background: rgba(0, 0, 0, 0.6);
       padding: 25px;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-bottom: 20px;
     }
     .logo {
       font-size: 26px;
       font-weight: bold;
       color: #fff;
-      text-shadow: 0 0 6px #f00;
     }
     .tagline {
       font-size: 14px;
       margin-top: 6px;
       color: #ccc;
-      text-shadow: 0 0 4px #f00;
     }
     .cta-button {
       margin: 20px auto 10px;
@@ -61,22 +83,20 @@
       color: red;
       margin-top: 10px;
     }
+    .trust-card, .features, .live-counter {
+      margin-top: 20px;
+      width: 95%;
+    }
     .trust-card {
-      margin: 20px auto;
       background: rgba(255, 255, 255, 0.05);
       padding: 15px;
       border-radius: 10px;
       border: 1px solid #444;
-      animation: fadeIn 1.2s ease-in-out;
     }
     .trust-card div {
       margin: 6px 0;
       color: #ffe58f;
       font-size: 14px;
-    }
-    .features {
-      margin: 20px auto;
-      animation: fadeIn 1.4s ease-in-out;
     }
     .features h2 {
       font-size: 16px;
@@ -90,26 +110,6 @@
     .features li {
       margin: 6px 0;
       color: #ccc;
-    }
-    .testimonials {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      max-width: 220px;
-      font-size: 12px;
-      opacity: 0.8;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 8px;
-      border-radius: 8px;
-      animation: floatIn 1.5s ease-in-out;
-    }
-    .testimonials div {
-      margin-bottom: 6px;
-      color: #eee;
-    }
-    @keyframes floatIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
     }
     .exit-popup {
       position: fixed;
@@ -138,45 +138,49 @@
       cursor: pointer;
     }
     .live-counter {
-      margin-top: 30px;
       font-size: 14px;
       color: #0f0;
       text-shadow: 0 0 6px #0f0;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { opacity: 0.6; }
-      50% { opacity: 1; }
-      100% { opacity: 0.6; }
+      text-align: center;
     }
   </style>
 </head>
-<body>  <div class="testimonials">
-    <div>"Bhai 4,500 ka win kara kal! 💥" – Rahul</div>
-    <div>"Free tip me bhi paisa ban gaya 😎" – Tushar</div>
-    <div>"VIP leke toh life set hai bhai! 🔥" – Mohit</div>
-  </div>  <div class="center-card">
-    <div class="logo">🎯 Jalwa Sureshot</div>
-    <div class="tagline">💯 Daily sureshot tips | 💸 Haar gaye toh paisa wapis</div>
-    <button class="cta-button" onclick="window.location.href='https://t.me/yourchannel'">👉 Join Telegram Channel Now</button>
-    <div class="timer" id="countdown">Next Tip Drops In: 00:00:00</div>
-  </div>  <div class="trust-card">
-    <div>✅ 98% Sahi Predictions</div>
-    <div>💸 20 Lakh+ Withdrawals Har Mahine</div>
-    <div>🔁 100% Paisa Wapis Agar Loss Hua</div>
-  </div>  <div class="features">
-    <h2>🚀 Kya Milega?</h2>
-    <ul>
-      <li>🎯 Roz ke Sureshot Colour Tips</li>
-      <li>🔒 VIP Group ka Access</li>
-      <li>💰 Haar gaye toh paisa wapis</li>
-      <li>📞 Personal Support WhatsApp pe</li>
-    </ul>
-  </div>  <div class="exit-popup" id="exitPopup">
-    <h3>🎁 Sirf Aapke Liye ₹500 Bonus!</h3>
-    <p>Wapas aaiye aur claim kariye apna reward Telegram pe!</p>
-    <button onclick="window.location.href='https://t.me/yourchannel'">Claim Now</button>
-  </div>  <div class="live-counter" id="liveUsers">🔴 132 log abhi online hai</div>  <script>
+<body>
+  <div class="main-wrapper">
+    <div class="testimonial-slider">
+      "Bhai 4,500 ka win kara kal! 💥" – Rahul | "Free tip me bhi paisa ban gaya 😎" – Tushar | "VIP leke toh life set hai bhai! 🔥" – Mohit
+    </div><div class="center-card">
+  <div class="logo">🎯 Jalwa Sureshot</div>
+  <div class="tagline">💯 Daily sureshot tips | 💸 Haar gaye toh paisa wapis</div>
+  <button class="cta-button" onclick="window.location.href='https://t.me/yourchannel'">👉 Join Telegram Channel Now</button>
+  <div class="timer" id="countdown">Next Tip Drops In: 00:00:00</div>
+</div>
+
+<div class="trust-card">
+  <div>✅ 98% Sahi Predictions</div>
+  <div>💸 20 Lakh+ Withdrawals Har Mahine</div>
+  <div>🔁 100% Paisa Wapis Agar Loss Hua</div>
+</div>
+
+<div class="features">
+  <h2>🚀 Kya Milega?</h2>
+  <ul>
+    <li>🎯 Roz ke Sureshot Colour Tips</li>
+    <li>🔒 VIP Group ka Access</li>
+    <li>💰 Haar gaye toh paisa wapis</li>
+    <li>📞 Personal Support WhatsApp pe</li>
+  </ul>
+</div>
+
+<div class="exit-popup" id="exitPopup">
+  <h3>🎁 Sirf Aapke Liye ₹500 Bonus!</h3>
+  <p>Wapas aaiye aur claim kariye apna reward Telegram pe!</p>
+  <button onclick="window.location.href='https://t.me/yourchannel'">Claim Now</button>
+</div>
+
+<div class="live-counter" id="liveUsers">🔴 132 log abhi online hai</div>
+
+  </div>  <script>
     function startCountdown(duration) {
       let timer = duration, hours, minutes, seconds;
       setInterval(function () {
