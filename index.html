@@ -11,7 +11,7 @@
     }
     body {
       margin: 0;
-      padding: 15px;
+      padding: 20px;
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       color: white;
@@ -26,7 +26,7 @@
     }
     .main-wrapper {
       width: 100%;
-      max-width: 500px;
+      max-width: 550px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,9 +34,9 @@
     }
     .testimonial-container {
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       position: relative;
-      height: 120px;
+      height: 160px;
       overflow: hidden;
     }
     .testimonial-slider {
@@ -48,10 +48,10 @@
       align-items: center;
       justify-content: center;
       will-change: transform;
-      animation: slideTestimonial 20s linear infinite;
+      animation: slideTestimonial 24s linear infinite;
     }
     .testimonial-slider:nth-child(2) {
-      animation-delay: 10s;
+      animation-delay: 12s;
     }
     @keyframes slideTestimonial {
       0% { transform: translateY(100%); opacity: 0; }
@@ -61,52 +61,54 @@
       100% { transform: translateY(-100%); opacity: 0; }
     }
     .testimonial-item {
-      width: 95%;
-      padding: 20px;
+      width: 100%;
+      padding: 25px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      font-size: 16px;
+      border-radius: 20px;
+      font-size: 20px;
       color: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
       border: 1px solid rgba(255,255,255,0.1);
-      height: 110px;
+      height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      line-height: 1.4;
     }
     .center-card {
       width: 100%;
       background: rgba(0, 0, 0, 0.6);
-      padding: 25px;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
       border: 1px solid rgba(255,255,255,0.1);
     }
     .logo {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: bold;
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .tagline {
-      font-size: 16px;
+      font-size: 20px;
       color: #ccc;
       line-height: 1.4;
     }
     .cta-button {
-      margin: 20px auto 15px;
-      padding: 15px 25px;
-      font-size: 18px;
+      margin: 25px auto 20px;
+      padding: 18px 30px;
+      font-size: 22px;
       background: #f00;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 15px;
       cursor: pointer;
-      box-shadow: 0 0 15px #f00;
+      box-shadow: 0 0 20px #f00;
       transition: background 0.3s;
       width: 100%;
-      max-width: 300px;
+      max-width: 350px;
       display: block;
       font-weight: bold;
     }
@@ -115,37 +117,37 @@
       transform: scale(0.98);
     }
     .timer {
-      font-size: 16px;
+      font-size: 20px;
       color: red;
-      margin-top: 15px;
+      margin-top: 20px;
       font-weight: bold;
     }
     .trust-card, .features, .live-counter {
-      margin-top: 20px;
+      margin-top: 30px;
       width: 100%;
     }
     .trust-card {
       background: rgba(255, 255, 255, 0.05);
-      padding: 18px;
-      border-radius: 12px;
+      padding: 25px;
+      border-radius: 15px;
       border: 1px solid rgba(255,255,255,0.1);
     }
     .trust-card div {
-      margin: 8px 0;
+      margin: 12px 0;
       color: #ffe58f;
-      font-size: 16px;
+      font-size: 20px;
     }
     .features h2 {
-      font-size: 18px;
-      margin-bottom: 12px;
+      font-size: 24px;
+      margin-bottom: 15px;
     }
     .features ul {
       list-style: none;
       padding: 0;
-      font-size: 16px;
+      font-size: 20px;
     }
     .features li {
-      margin: 8px 0;
+      margin: 12px 0;
       color: #ccc;
       line-height: 1.5;
     }
@@ -156,41 +158,48 @@
       transform: translate(-50%, -50%);
       background: rgba(0, 0, 0, 0.95);
       color: #fff;
-      padding: 25px;
-      border-radius: 15px;
+      padding: 30px;
+      border-radius: 20px;
       border: 2px solid #f00;
-      box-shadow: 0 0 20px #f00;
+      box-shadow: 0 0 25px #f00;
       display: none;
       z-index: 1000;
       width: 90%;
-      max-width: 350px;
-      font-size: 16px;
+      max-width: 400px;
+      font-size: 20px;
       text-align: center;
     }
     .exit-popup h3 {
       margin-top: 0;
-      font-size: 20px;
+      font-size: 24px;
       color: #ffe58f;
     }
     .exit-popup button {
-      margin-top: 15px;
-      padding: 12px 20px;
+      margin-top: 20px;
+      padding: 15px 25px;
       background: #f00;
       color: #fff;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 12px;
+      font-size: 20px;
       cursor: pointer;
       width: 100%;
       font-weight: bold;
     }
     .live-counter {
-      font-size: 16px;
+      font-size: 20px;
       color: #0f0;
-      text-shadow: 0 0 8px #0f0;
+      text-shadow: 0 0 10px #0f0;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-weight: bold;
+    }
+    .redirect-timer {
+      font-size: 22px;
+      color: #ff0;
+      margin: 20px 0;
+      font-weight: bold;
+      text-shadow: 0 0 8px #ff0;
     }
   </style>
 </head>
@@ -206,19 +215,13 @@
       <div class="testimonial-slider">
         <div class="testimonial-item">"VIP leke toh life set hai bhai! 🔥 25K profit this month" – Mohit, Bangalore</div>
       </div>
-      <div class="testimonial-slider">
-        <div class="testimonial-item">"Pehle din se hi profit! 🤩 3 din me 7,800 ka return" – Vikas, Pune</div>
-      </div>
-      <div class="testimonial-slider">
-        <div class="testimonial-item">"1 hafte me 15K ka profit! 🚀 Paisa double scheme se better" – Ankit, Hyderabad</div>
-      </div>
     </div>
 
     <div class="center-card">
       <div class="logo">🎯 Jalwa Sureshot</div>
       <div class="tagline">💯 Daily sureshot tips | 💸 Haar gaye toh paisa wapis</div>
-      <button class="cta-button" onclick="window.location.href='https://t.me/yourchannel'">👉 Join Telegram Channel Now</button>
-      <div class="timer" id="countdown">Next Tip Drops In: 00:00:00</div>
+      <button class="cta-button" id="joinButton">👉 Join Telegram Channel Now</button>
+      <div class="redirect-timer" id="redirectTimer">Auto redirect in: 10 seconds</div>
     </div>
 
     <div class="trust-card">
@@ -241,43 +244,37 @@
     <div class="exit-popup" id="exitPopup">
       <h3>🎁 Sirf Aapke Liye ₹500 Bonus!</h3>
       <p>Abhi join karein aur pao exclusive offer! Limited time only!</p>
-      <button onclick="window.location.href='https://t.me/yourchannel'">Claim Now</button>
+      <button id="popupJoinButton">Claim Now</button>
     </div>
 
-    <div class="live-counter" id="liveUsers">🔴 158 log abhi online hai</div>
+    <div class="live-counter" id="liveUsers">🔴 182 log abhi online hai</div>
   </div>
 
   <script>
+    const TELEGRAM_LINK = "https://t.me/+ebyPAPWhEhE0Yzll";
+    
     document.addEventListener('DOMContentLoaded', function() {
-      // Countdown timer
-      function startCountdown(duration) {
-        let timer = duration, hours, minutes, seconds;
-        const countdownElement = document.getElementById('countdown');
+      // Set all links
+      document.getElementById('joinButton').onclick = function() {
+        window.location.href = TELEGRAM_LINK;
+      };
+      document.getElementById('popupJoinButton').onclick = function() {
+        window.location.href = TELEGRAM_LINK;
+      };
+      
+      // 10 second redirect timer
+      let timeLeft = 10;
+      const redirectTimer = document.getElementById('redirectTimer');
+      const timerInterval = setInterval(function() {
+        timeLeft--;
+        redirectTimer.textContent = `Auto redirect in: ${timeLeft} seconds`;
         
-        const interval = setInterval(function() {
-          hours = parseInt(timer / 3600, 10);
-          minutes = parseInt((timer % 3600) / 60, 10);
-          seconds = parseInt(timer % 60, 10);
-
-          hours = hours < 10 ? "0" + hours : hours;
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-
-          countdownElement.textContent = "Next Tip Drops In: " + hours + ":" + minutes + ":" + seconds;
-
-          if (--timer < 0) {
-            timer = duration;
-          }
-        }, 1000);
-        
-        document.addEventListener('visibilitychange', function() {
-          if (document.hidden) {
-            clearInterval(interval);
-          }
-        });
-      }
-      startCountdown(7200);
-
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          window.location.href = TELEGRAM_LINK;
+        }
+      }, 1000);
+      
       // Exit intent popup
       let exitPopupShown = false;
       let mouseY = 0;
@@ -302,7 +299,6 @@
         document.getElementById('exitPopup').style.display = 'block';
         exitPopupShown = true;
         
-        // Close popup after 15 seconds if not interacted with
         setTimeout(function() {
           if (document.getElementById('exitPopup').style.display === 'block') {
             document.getElementById('exitPopup').style.display = 'none';
@@ -311,12 +307,12 @@
       }
 
       // Fake live user count
-      let liveUsers = 158;
+      let liveUsers = 182;
       const userElement = document.getElementById('liveUsers');
       
       setInterval(() => {
-        let change = Math.floor(Math.random() * 6) * (Math.random() > 0.5 ? 1 : -1);
-        liveUsers = Math.max(140, liveUsers + change);
+        let change = Math.floor(Math.random() * 8) * (Math.random() > 0.5 ? 1 : -1);
+        liveUsers = Math.max(160, liveUsers + change);
         userElement.innerText = `🔴 ${liveUsers} log abhi online hai`;
       }, 5000);
       
@@ -327,6 +323,7 @@
           testimonials.forEach(slider => {
             slider.style.animationPlayState = 'paused';
           });
+          clearInterval(timerInterval);
         } else {
           testimonials.forEach(slider => {
             slider.style.animationPlayState = 'running';
