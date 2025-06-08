@@ -1,214 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jalwa Games Prediction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jalwa Sureshot</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 40px 30px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: white;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow-x: hidden;
     }
-
     .logo {
-      width: 80px;
-      height: 80px;
-      background-image: url('logo.png'); /* Replace with your actual logo */
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin: 0 auto 20px;
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #f6c900;
+      text-shadow: 0 0 10px gold;
     }
-
-    h1 {
-      font-size: 1.8rem;
+    .tagline {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #d9d9d9;
+    }
+    .cta-button {
+      margin: 25px auto;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #39ff14;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #39ff14;
+    }
+    .timer {
+      font-size: 20px;
+      margin: 10px auto;
+      color: #ff3c3c;
+      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .trust-signals {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 30px 0;
+    }
+    .trust-signals div {
+      background: #111;
+      padding: 12px;
+      margin: 0 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #ffe58f;
+    }
+    .features {
+      margin: 30px;
+    }
+    .features h2 {
       margin-bottom: 10px;
     }
-
-    .typing-wrapper {
-      overflow: hidden;
-      position: relative;
-      height: 24px;
-      margin: 20px auto;
-      display: flex;
-      justify-content: center;
+    .features ul {
+      list-style: none;
+      padding: 0;
     }
-
-    .typing {
-      font-size: 1rem;
-      color: #bbbbbb;
-      white-space: nowrap;
-      overflow: hidden;
-      position: relative;
-      letter-spacing: 1px;
-      max-width: 100%;
+    .features li {
+      margin: 10px 0;
+      color: #ccc;
     }
-
-    .typing::before,
-    .typing::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 0;
-      background: transparent;
-      animation: expandFromCenter 3s forwards;
+    .testimonials {
+      margin: 30px;
     }
-
-    .typing::before {
-      left: 50%;
-      transform: translateX(-50%);
-      border-right: 2px solid #fff;
+    .testimonials h3 {
+      margin-bottom: 15px;
     }
-
-    .typing-text {
-      opacity: 0;
-      animation: fadeInText 3s forwards;
+    .testimonial-box {
+      background: #222;
+      padding: 15px;
+      margin: 10px auto;
+      max-width: 300px;
+      border-radius: 10px;
+      font-size: 15px;
     }
-
-    @keyframes expandFromCenter {
-      0% {
-        width: 0;
-      }
-      100% {
-        width: 100%;
-      }
-    }
-
-    @keyframes fadeInText {
-      0% {
-        opacity: 0;
-      }
-      40% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .btn {
-      background-color: #e50914;
-      color: #ffffff;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 25px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #ff1e2c;
-    }
-
-    #countdown {
-      margin-top: 20px;
-      font-size: 0.95rem;
-      color: #ff5e5e;
-      font-weight: bold;
+    #popup {
       display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background: black;
+      padding: 20px;
+      border: 2px solid gold;
+      color: white;
+      z-index: 1000;
+      border-radius: 12px;
     }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .typing {
-        font-size: 0.9rem;
-      }
-
-      .card {
-        padding: 30px 20px;
-      }
+    #fake-live {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #ff3c3c;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
     }
   </style>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4122349787987868');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4122349787987868&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
-<body>
+<body>  <div class="logo">🎯 Jalwa Sureshot</div>
+  <div class="tagline">💯 Daily sureshot tips | 💸 Haar gaye toh paisa wapis | 5000+ Users</div><button class="cta-button" onclick="window.location.href='https://t.me/yourchannel'">👉 Join Telegram Channel Now</button>
 
-  <div class="card">
-    <div class="logo"></div>
-    <h1>Jalwa Games Prediction</h1>
+  <div class="timer" id="countdown">Next Tip Drops In: 00:00:00</div>  <div class="trust-signals">
+    <div>✅ 98% Sahi Predictions</div>
+    <div>💸 20 Lakh+ Withdrawals Har Mahine</div>
+    <div>🔁 100% Paisa Wapis Agar Loss Hua</div>
+  </div>  <div class="features">
+    <h2>🚀 Kya Milega?</h2>
+    <ul>
+      <li>🎯 Roz ke Sureshot Colour Tips</li>
+      <li>🔒 VIP Group ka Access</li>
+      <li>💰 Haar gaye toh paisa wapis</li>
+      <li>📞 Personal Support WhatsApp pe</li>
+    </ul>
+  </div>  <div class="testimonials">
+    <h3>🔥 Users kya bolte hain:</h3>
+    <div class="testimonial-box">"Bhai 4,500 ka win kara kal! Sahi jaa rahe ho 💸💥" – *Rahul* </div>
+    <div class="testimonial-box">"Free tip me bhi paisa ban gaya 😎" – *Tushar*</div>
+    <div class="testimonial-box">"VIP leke toh life set hai bhai! 🔥" – *Mohit*</div>
+  </div>  <div id="popup">
+    🎁 Wapas aaye ho? Tere liye ₹500 bonus ready hai! <br><br>
+    <button onclick="window.location.href='https://t.me/yourchannel'">🎯 Join Now & Claim</button>
+  </div>  <div id="fake-live">🔴 127 Users Online</div>  <script>
+    // Countdown Timer
+    function startCountdown(duration) {
+      let timer = duration, hours, minutes, seconds;
+      setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-    <div class="typing-wrapper">
-      <div class="typing">
-        <span class="typing-text">Agar Loss Hua Sara Paisa Wapis</span>
-      </div>
-    </div>
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    <a class="btn" href="https://t.me/+rUeSSR7uwo01MTRl" target="_blank">Join on Telegram</a>
-    <div id="countdown">Redirecting in <span id="seconds">7</span>s...</div>
-  </div>
+        document.getElementById('countdown').textContent = "Next Tip Drops In: " + hours + ":" + minutes + ":" + seconds;
 
-  <script>
-    // Countdown logic
-    let secondsLeft = 7;
-    const countdownText = document.getElementById("countdown");
-    const secondsSpan = document.getElementById("seconds");
-
-    // Show countdown after typing effect
-    setTimeout(() => {
-      countdownText.style.display = "block";
-
-      const interval = setInterval(() => {
-        secondsLeft--;
-        secondsSpan.textContent = secondsLeft;
-
-        if (secondsLeft === 0) {
-          clearInterval(interval);
-          window.location.href = "https://t.me/+rUeSSR7uwo01MTRl"; // Replace with your Telegram link
+        if (--timer < 0) {
+          timer = duration; // loop again
         }
       }, 1000);
-    }, 3000); // 3s delay for typing animation
-  </script>
+    }
+    startCountdown(7200); // 2 hour timer
 
-</body>
+    // Fake live counter
+    let count = 127;
+    setInterval(() => {
+      let fluctuation = Math.floor(Math.random() * 5 - 2);
+      count = Math.max(120, count + fluctuation);
+      document.getElementById("fake-live").textContent = `🔴 ${count} Users Online`;
+    }, 5000);
+
+    // Popup on close attempt
+    let popupShown = false;
+    document.addEventListener("mouseleave", function(e) {
+      if (!popupShown && e.clientY < 10) {
+        document.getElementById("popup").style.display = 'block';
+        popupShown = true;
+      }
+    });
+  </script></body>
 </html>
