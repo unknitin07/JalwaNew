@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jalwa Sureshot</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -11,109 +12,155 @@
       color: white;
       text-align: center;
       overflow-x: hidden;
+      padding: 0 10px;
+    }
+    .center-card {
+      width: 100%;
+      max-width: 95%;
+      margin: 60px auto 20px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .logo {
-      font-size: 32px;
+      font-size: 26px;
       font-weight: bold;
-      margin-top: 30px;
-      color: #f6c900;
-      text-shadow: 0 0 10px gold;
+      color: #fff;
+      text-shadow: 0 0 6px #f00;
     }
     .tagline {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #d9d9d9;
+      font-size: 14px;
+      margin-top: 6px;
+      color: #ccc;
+      text-shadow: 0 0 4px #f00;
     }
     .cta-button {
-      margin: 25px auto;
-      padding: 15px 30px;
-      font-size: 18px;
-      background: #39ff14;
-      color: black;
+      margin: 20px auto 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #f00;
+      color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 0 15px #39ff14;
+      box-shadow: 0 0 10px #f00;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .cta-button:hover {
+      background: #cc0000;
+      transform: scale(1.05);
     }
     .timer {
-      font-size: 20px;
-      margin: 10px auto;
-      color: #ff3c3c;
-      background: rgba(0,0,0,0.6);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 10px;
+      font-size: 14px;
+      color: red;
+      margin-top: 10px;
     }
-    .trust-signals {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 30px 0;
-    }
-    .trust-signals div {
-      background: #111;
-      padding: 12px;
-      margin: 0 30px;
+    .trust-card {
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
       border-radius: 10px;
-      font-size: 16px;
+      border: 1px solid #444;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .trust-card div {
+      margin: 6px 0;
       color: #ffe58f;
+      font-size: 14px;
     }
     .features {
-      margin: 30px;
+      margin: 20px auto;
+      animation: fadeIn 1.4s ease-in-out;
     }
     .features h2 {
-      margin-bottom: 10px;
+      font-size: 16px;
+      margin-bottom: 8px;
     }
     .features ul {
       list-style: none;
       padding: 0;
+      font-size: 14px;
     }
     .features li {
-      margin: 10px 0;
+      margin: 6px 0;
       color: #ccc;
     }
     .testimonials {
-      margin: 30px;
-    }
-    .testimonials h3 {
-      margin-bottom: 15px;
-    }
-    .testimonial-box {
-      background: #222;
-      padding: 15px;
-      margin: 10px auto;
-      max-width: 300px;
-      border-radius: 10px;
-      font-size: 15px;
-    }
-    #popup {
-      display: none;
-      position: fixed;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -30%);
-      background: black;
-      padding: 20px;
-      border: 2px solid gold;
-      color: white;
-      z-index: 1000;
-      border-radius: 12px;
-    }
-    #fake-live {
       position: fixed;
       bottom: 10px;
       right: 10px;
-      background: #ff3c3c;
-      padding: 8px 15px;
-      border-radius: 20px;
+      max-width: 220px;
+      font-size: 12px;
+      opacity: 0.8;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px;
+      border-radius: 8px;
+      animation: floatIn 1.5s ease-in-out;
+    }
+    .testimonials div {
+      margin-bottom: 6px;
+      color: #eee;
+    }
+    @keyframes floatIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .exit-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #f00;
+      display: none;
+      z-index: 1000;
+      max-width: 90%;
       font-size: 14px;
+      text-align: center;
+    }
+    .exit-popup button {
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: #f00;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .live-counter {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #0f0;
+      text-shadow: 0 0 6px #0f0;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
     }
   </style>
 </head>
-<body>  <div class="logo">🎯 Jalwa Sureshot</div>
-  <div class="tagline">💯 Daily sureshot tips | 💸 Haar gaye toh paisa wapis | 5000+ Users</div><button class="cta-button" onclick="window.location.href='https://t.me/yourchannel'">👉 Join Telegram Channel Now</button>
-
-  <div class="timer" id="countdown">Next Tip Drops In: 00:00:00</div>  <div class="trust-signals">
+<body>  <div class="testimonials">
+    <div>"Bhai 4,500 ka win kara kal! 💥" – Rahul</div>
+    <div>"Free tip me bhi paisa ban gaya 😎" – Tushar</div>
+    <div>"VIP leke toh life set hai bhai! 🔥" – Mohit</div>
+  </div>  <div class="center-card">
+    <div class="logo">🎯 Jalwa Sureshot</div>
+    <div class="tagline">💯 Daily sureshot tips | 💸 Haar gaye toh paisa wapis</div>
+    <button class="cta-button" onclick="window.location.href='https://t.me/yourchannel'">👉 Join Telegram Channel Now</button>
+    <div class="timer" id="countdown">Next Tip Drops In: 00:00:00</div>
+  </div>  <div class="trust-card">
     <div>✅ 98% Sahi Predictions</div>
     <div>💸 20 Lakh+ Withdrawals Har Mahine</div>
     <div>🔁 100% Paisa Wapis Agar Loss Hua</div>
@@ -125,16 +172,11 @@
       <li>💰 Haar gaye toh paisa wapis</li>
       <li>📞 Personal Support WhatsApp pe</li>
     </ul>
-  </div>  <div class="testimonials">
-    <h3>🔥 Users kya bolte hain:</h3>
-    <div class="testimonial-box">"Bhai 4,500 ka win kara kal! Sahi jaa rahe ho 💸💥" – *Rahul* </div>
-    <div class="testimonial-box">"Free tip me bhi paisa ban gaya 😎" – *Tushar*</div>
-    <div class="testimonial-box">"VIP leke toh life set hai bhai! 🔥" – *Mohit*</div>
-  </div>  <div id="popup">
-    🎁 Wapas aaye ho? Tere liye ₹500 bonus ready hai! <br><br>
-    <button onclick="window.location.href='https://t.me/yourchannel'">🎯 Join Now & Claim</button>
-  </div>  <div id="fake-live">🔴 127 Users Online</div>  <script>
-    // Countdown Timer
+  </div>  <div class="exit-popup" id="exitPopup">
+    <h3>🎁 Sirf Aapke Liye ₹500 Bonus!</h3>
+    <p>Wapas aaiye aur claim kariye apna reward Telegram pe!</p>
+    <button onclick="window.location.href='https://t.me/yourchannel'">Claim Now</button>
+  </div>  <div class="live-counter" id="liveUsers">🔴 132 log abhi online hai</div>  <script>
     function startCountdown(duration) {
       let timer = duration, hours, minutes, seconds;
       setInterval(function () {
@@ -149,27 +191,28 @@
         document.getElementById('countdown').textContent = "Next Tip Drops In: " + hours + ":" + minutes + ":" + seconds;
 
         if (--timer < 0) {
-          timer = duration; // loop again
+          timer = duration;
         }
       }, 1000);
     }
-    startCountdown(7200); // 2 hour timer
+    startCountdown(7200);
 
-    // Fake live counter
-    let count = 127;
-    setInterval(() => {
-      let fluctuation = Math.floor(Math.random() * 5 - 2);
-      count = Math.max(120, count + fluctuation);
-      document.getElementById("fake-live").textContent = `🔴 ${count} Users Online`;
-    }, 5000);
-
-    // Popup on close attempt
-    let popupShown = false;
-    document.addEventListener("mouseleave", function(e) {
-      if (!popupShown && e.clientY < 10) {
-        document.getElementById("popup").style.display = 'block';
-        popupShown = true;
+    // Exit intent
+    let exitPopupShown = false;
+    window.onbeforeunload = function (e) {
+      if (!exitPopupShown) {
+        document.getElementById('exitPopup').style.display = 'block';
+        exitPopupShown = true;
+        return "Wait! Claim your ₹500 bonus!";
       }
-    });
+    };
+
+    // Fake live user count
+    let liveUsers = 132;
+    setInterval(() => {
+      let change = Math.floor(Math.random() * 5) * (Math.random() > 0.5 ? 1 : -1);
+      liveUsers = Math.max(100, liveUsers + change);
+      document.getElementById('liveUsers').innerText = `🔴 ${liveUsers} log abhi online hai`;
+    }, 4000);
   </script></body>
 </html>
